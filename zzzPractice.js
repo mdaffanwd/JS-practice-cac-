@@ -1,13 +1,12 @@
-const User = {
-    _username: 'affan',
-    _password: 'affan123',
+function user(name, age, single) {
+    this.name = name
+    this.age = age
+    this.single = single
 
-    get username(){
-        return this._username.toUpperCase()
-    },
-    set username(value){
-        this._username = value
+    this.greeting =  function() {
+        console.log(`hello, ${this.name}`);
     }
 }
+const userOne = new user('affan', 18, false)
 
-console.log(User.username);
+console.log(userOne.constructor);
