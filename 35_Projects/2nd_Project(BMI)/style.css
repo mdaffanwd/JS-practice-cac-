@@ -1,0 +1,38 @@
+*{
+  /* margin: 0; */
+  /* padding: 0; */
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: #a89d9d;
+}
+.container{
+  width: 80%;
+  margin: auto;
+  padding: 1em;
+  /* background-color: red; */
+}
+p{
+  font-weight: bold;
+}
+input{
+  background-color: white;
+  padding: 0.4em;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+}
+#results {
+  margin-top: 1em;
+  font-weight: bolder;
+  font-size: 1.3em;
+}
+button{
+  padding: 0.5em 1em;
+  background-color: white;
+  border-radius: 0.5em;
+  font-weight: bolder;
+  font-size: 1em;
+}
+#weight-guide{
+  /* background-color: red; */
+  padding: 40px;
+}

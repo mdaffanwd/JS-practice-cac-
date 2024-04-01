@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Document</title>
+</head>
+
+<body>
+    <h1>Chai aur JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <span>
+        <h1 id="time"></h1>
+    </span>
+    <!-- <span id="time"></span> -->
+
+
+    <script>
+        const start = document.getElementById('start')
+        const stop = document.getElementById('stop')
+        const timePanel = document.getElementById('time')
+
+        start.addEventListener('click', function () {
+            const showTime = setInterval(() => {
+                const time = new Date().toLocaleTimeString();
+                // console.log(time);
+                timePanel.innerHTML = time
+                timePanel.style.color = '#fff' 
+                timePanel.style.backgroundColor = '#414141' 
+            }, 1000);
+            stop.addEventListener('click', ()=>{
+                clearInterval(showTime)
+            })
+            
+        })
+
+
+
+
+
+        
+
+    </script>
+</body>
+
+</html>

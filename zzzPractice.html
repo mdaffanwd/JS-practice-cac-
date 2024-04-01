@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+
+
+<body>
+
+
+    <script>
+        const pDiv = document.createElement('div');
+        const dImg = document.createElement('img');
+        const dSpan = document.createElement('span');
+        const btn = document.createElement('button');
+
+        pDiv.appendChild(dImg);
+        pDiv.appendChild(dSpan);
+        
+        document.body.appendChild(pDiv);
+        document.body.appendChild(btn);
+
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText)
+                // console.log(data.avatar_url);
+                const url = "https://avatars.githubusercontent.com/u/11613311?v=4"
+                
+                dImg.setAttribute('src', url)
+                dSpan.textContent = data.followers
+                // console.log(data);
+            }
+        }
+
+
+        xhr.send()
+        
+
+
+
+        
+    </script>
+</body>
+
+</html>
+
+<!-- const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+const xhr = new XMLHttpRequest()
+xhr.open('GET', requestUrl);
+xhr.onreadystatechange = function() {
+    // console.log(xhr.readyState);
+    if(xhr.readyState === 4){
+        console.log(xhr.readyState);
+        const data = JSON.parse(this.responseText) 
+        console.log(data);
+    }else{
+        console.log('error');
+    }
+}
+
+
+
+xhr.send() -->

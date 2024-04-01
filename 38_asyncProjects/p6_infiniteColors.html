@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+</head>
+
+<body style="background-color: #212121; color: #fff">
+  <main>
+    <h1>Chai aur code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </main>
+
+
+  <script>
+    const body = document.querySelector('body')
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+
+    const randomColor = function () {
+      const hex = '0123456789ABCDEF'
+      let color = '#'
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)]
+        // console.log(color);
+      }
+      return color;
+    }
+
+    let intervalId;
+    const changeColor = () => {
+      body.style.backgroundColor = randomColor()
+    }
+    const startChangingColors = () => {
+      if(!intervalId){
+        intervalId = setInterval(changeColor, 1000)
+      }
+    }
+    const stopChangingColors = () => {
+      clearInterval(intervalId)
+      intervalId = null
+    }
+
+
+
+    start.addEventListener('click', startChangingColors);
+    stop.addEventListener('click', stopChangingColors)
+
+
+  </script>
+</body>
+
+</html>

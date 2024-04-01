@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calling API</title>
+</head>
+
+<body style="background-color: #212121;color:#fff;">
+
+    <div class="container">
+        <img>
+        <h3></h3>
+        <h4></h4>
+        <p></p>
+        <button id="btn">Blog</button>
+    </div>
+
+
+
+
+    <script>
+        const pic = document.querySelector('img')
+        const name = document.querySelector('h3')
+        const flrs = document.querySelector('h4')
+        const p = document.querySelector('p')
+        const btn = document.querySelector('#btn')
+
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function () {
+            // console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText)
+                // console.log(data.followers);
+                // ******* code for pic
+                pic.setAttribute('src', `${data.avatar_url}`)
+                pic.style.width = '14em'
+
+                // ****for name
+                name.innerHTML = `${data.name}`;
+                flrs.innerHTML = `Followers : ${data.followers}`;
+
+                p.innerHTML = `${data.bio} \n \n`
+
+
+
+
+            }
+        }
+
+
+
+
+        xhr.send()
+
+
+
+
+
+    </script>
+</body>
+
+</html>
