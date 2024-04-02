@@ -1,16 +1,16 @@
 const User = {
-    email: 'affan@code',
-    password: 'abc',
+    _email: 'affan@code',
+    _password: 'abc',
 
     get email(){
-        return this.email.toUpperCase();
+        return this._email.toUpperCase();
     },
     set email(value){
-        this.email = value;
+        return this._email = value;
     }
 }
 
-const tea = Object.create(User)
+const tea = Object.create(User) //? Object.create(User) => by default value is "null"
 
 console.log(tea.email);
 
