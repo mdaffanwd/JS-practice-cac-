@@ -13,9 +13,9 @@ class User {
 }
 
 const affan = new User('affan');
-console.log(affan);
-// console.log(affan.createId());
-
+console.log(affan); //? User { username: 'affan' }
+// console.log(affan.createId()); //? error, to access this 'console.log(affan.constructor.createId())
+console.log(affan.constructor.createId()) //? 123
 class Teacher extends User {
     constructor(username, email) {
         super(username);
@@ -24,4 +24,4 @@ class Teacher extends User {
 }
 
 const iphone = new Teacher('iphone', 'i@phone.com');
-iphone.logMe()
+iphone.logMe() //? USERNAME: iphone

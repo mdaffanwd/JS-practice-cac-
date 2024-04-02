@@ -35,10 +35,12 @@ const teachingSupport = {
 }
 const TASupoort = { 
     makeAssignment: "JS assignment",
-    fullTime: true
-    // __proto__: teachingSupport
+    fullTime: true,
+    __proto__: teachingSupport
 }
-// Teacher.__proto__ = User
+Teacher.__proto__ = User
+// console.log(Teacher.email);
+console.log(TASupoort.isAvailable);
 
 let anotherUsername = "ChaiaurCode                                "
 

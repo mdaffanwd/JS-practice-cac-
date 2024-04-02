@@ -20,7 +20,11 @@
             // requirements
             document
             .querySelector('button')
-            .addEventListener('click', this.handleClick.bind(this))
+            .addEventListener('click', this.handleClick.bind(this)) 
+            /*
+            1. ye values ko bind karta hai.
+            2. ye directly value nahin deta,ise store karna padta hai aur 'call' karna padta hai, yani values ko bind karna hai. //? sheryians
+             */
         }
         handleClick(){
             console.log('clicked on button');
@@ -29,6 +33,7 @@
     }
 
     const app = new React()
+
 
 
 

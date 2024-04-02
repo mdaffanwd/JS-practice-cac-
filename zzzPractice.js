@@ -1,12 +1,7 @@
-function user(name, age, single) {
-    this.name = name
-    this.age = age
-    this.single = single
-
-    this.greeting =  function() {
-        console.log(`hello, ${this.name}`);
-    }
+function abcd(val1, val2, val3) {
+    console.log(this,val1, val2, val3);
 }
-const userOne = new user('affan', 18, false)
-
-console.log(userOne.constructor);
+var obj = {age: 19}
+abcd.apply(obj, [1,2,3])
+// var bindedfn = abcd.bind(obj)
+// bindedfn()
